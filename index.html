@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en" dir="ltr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mohamed Ahmed - Portfolio & soalect</title>
-    <!-- إعدادات إضافة الصفحة للشاشة الرئيسية كتطبيق -->
+    <title>Mohamed Ahmed - Portfolio & SOALECT</title>
+    <!-- PWA / Add to Home Screen setup -->
     <link rel="manifest" href="manifest.json">
     <link rel="icon" href="icon-192.png" type="image/png">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -12,9 +12,9 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="apple-mobile-web-app-title" content="Profile">
     <meta name="theme-color" content="#05070f">
-    <!-- استيراد خط Tajawal الفخم من Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;900&display=swap" rel="stylesheet">
-    <!-- مكتبة أيقونات FontAwesome -->
+    <!-- Google Fonts: Poppins (display) + Inter (body) -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome icon library -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
@@ -34,8 +34,12 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Tajawal', sans-serif;
+            font-family: 'Inter', sans-serif;
             scroll-behavior: smooth;
+        }
+
+        h1, h2, h3, .logo, .btn, .hero-badge, nav a {
+            font-family: 'Poppins', sans-serif;
         }
 
         body {
@@ -250,7 +254,7 @@
             color: var(--text-muted);
             margin-bottom: 35px;
             max-width: 650px;
-            text-align: justify;
+            text-align: left;
             line-height: 1.8;
         }
 
@@ -479,6 +483,45 @@
             line-height: 1.7;
         }
 
+        /* --- 5.1. تصغير قسم المهارات تحديدًا --- */
+        #about {
+            min-height: auto;
+            padding-top: 60px;
+            padding-bottom: 40px;
+        }
+
+        #about .section-title {
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+        }
+
+        #about .skills-grid {
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+        }
+
+        #about .skill-card {
+            padding: 20px 16px;
+        }
+
+        #about .skill-icon {
+            width: 42px;
+            height: 42px;
+            font-size: 1.2rem;
+            margin-bottom: 12px;
+            border-radius: 12px;
+        }
+
+        #about .skill-card h3 {
+            font-size: 1rem;
+            margin-bottom: 8px;
+        }
+
+        #about .skill-card p {
+            font-size: 0.8rem;
+            line-height: 1.5;
+        }
+
         /* --- 6. قسم متجر ملابس soalect --- */
         .store-grid {
             display: grid;
@@ -586,7 +629,81 @@
             box-shadow: 0 0 15px rgba(6, 182, 212, 0.4);
         }
 
-        /* --- 6.4. قسم المشاريع البرمجية --- */
+        /* --- 6.3. Tech Stack section --- */
+        .stack-category {
+            margin-bottom: 45px;
+        }
+
+        .stack-category:last-child {
+            margin-bottom: 0;
+        }
+
+        .stack-category-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+            letter-spacing: 0.5px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .stack-category-title::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: var(--border-color);
+        }
+
+        .stack-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+            gap: 18px;
+        }
+
+        .stack-item {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 24px 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+            text-align: center;
+            transition: all 0.35s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        .stack-item:hover {
+            transform: translateY(-6px);
+            border-color: rgba(6, 182, 212, 0.4);
+            box-shadow: 0 15px 30px rgba(6, 182, 212, 0.1);
+        }
+
+        .stack-item i {
+            font-size: 1.9rem;
+            color: var(--secondary-color);
+            transition: all 0.35s ease;
+        }
+
+        .stack-item:hover i {
+            color: var(--primary-color);
+            transform: scale(1.15);
+        }
+
+        .stack-item span {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text-color);
+        }
+
+        .stack-more {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        /* --- 6.4. Programming projects section --- */
         .projects-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -834,6 +951,40 @@
                 gap: 18px;
             }
 
+            #about {
+                padding-top: 100px;
+                padding-bottom: 25px;
+            }
+
+            #about .section-title {
+                font-size: 1.4rem;
+                margin-bottom: 20px;
+            }
+
+            #about .skills-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 10px;
+            }
+
+            #about .skill-card {
+                padding: 14px 10px;
+            }
+
+            #about .skill-icon {
+                width: 34px;
+                height: 34px;
+                font-size: 1rem;
+                margin-bottom: 8px;
+            }
+
+            #about .skill-card h3 {
+                font-size: 0.8rem;
+            }
+
+            #about .skill-card p {
+                display: none;
+            }
+
             .skill-card {
                 padding: 28px 22px;
             }
@@ -860,6 +1011,27 @@
                 gap: 18px;
             }
 
+            .stack-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 12px;
+            }
+
+            .stack-item {
+                padding: 18px 8px;
+            }
+
+            .stack-item i {
+                font-size: 1.5rem;
+            }
+
+            .stack-item span {
+                font-size: 0.7rem;
+            }
+
+            .stack-category-title {
+                font-size: 1rem;
+            }
+
             .project-card {
                 padding: 28px 22px;
             }
@@ -882,145 +1054,188 @@
 </head>
 <body>
 
-    <!-- تموجات الإضاءة المتنقلة خلف الصفحة -->
+    <!-- Ambient background glows -->
     <div class="bg-glows">
         <div class="glow-1"></div>
         <div class="glow-2"></div>
         <div class="glow-3"></div>
     </div>
 
-    <!-- شريط التنقل المتطور -->
+    <!-- Navigation bar -->
     <header>
         <div class="nav-container">
             <a href="#home" class="logo">Mohamed</a>
             <nav>
                 <ul>
-                    <li><a href="#home">الرئيسية</a></li>
-                    <li><a href="#about">المهارات</a></li>
-                    <li><a href="https://soalect-store-git-main-tm-6da2d477.vercel.app/" target="_blank">متجري</a></li>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">Skills</a></li>
+                    <li><a href="https://soalect-store-git-main-tm-6da2d477.vercel.app/" target="_blank">My Store</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <!-- قسم الرئيسية (الملف الشخصي والروابط الاجتماعية لـ Mohamed Ahmed) -->
+    <!-- Hero section (profile & social links) -->
     <section id="home">
         <div class="hero">
             <div class="hero-content">
-                <span class="hero-badge"><i class="fa-solid fa-gem"></i> مؤسس soalect | مدير مشاريع | مطور</span>
-                <h1>أنا <span>Mohamed Ahmed</span></h1>
-                <h2>شغوف بالتميز والوصول الدائم للأهداف</h2>
-                <p>أنا شخص مدفوع بالشغف وتحدي الذات، لا أقبل بالحلول العادية بل أضع أهدافي نُصب عيني وأسعى دائماً لتحقيقها بأعلى كفاءة. أتميز بمهارة عالية في <strong>إدارة المشاريع</strong>؛ حيث أقود الأفكار من مرحلة التخطيط المبدئي حتى التنفيذ المتكامل والناجح، مع دمج خبرتي التقنية والجمالية لبناء مشاريع متميزة تترك أثراً حقيقياً.</p>
+                <span class="hero-badge"><i class="fa-solid fa-gem"></i> SOALECT Founder | Project Manager | Developer</span>
+                <h1>I'm <span>Mohamed Ahmed</span></h1>
+                <h2>Driven by excellence, always chasing the next goal</h2>
+                <p>IT student at Borg El Arab University. I don't settle for average — I set my goals and push until I hit them, blending strong <strong>project management</strong> skills with technical and creative execution to build projects that leave a real impact.</p>
                 
-                <!-- حاوية التفاعل الاجتماعي والأزرار -->
+                <!-- Buttons and social links -->
                 <div class="action-area">
                     <div class="hero-buttons">
-                        <a href="https://soalect-store-git-main-tm-6da2d477.vercel.app/" target="_blank" class="btn btn-primary">تصفح المتجر <i class="fa-solid fa-bag-shopping"></i></a>
+                        <a href="https://soalect-store-git-main-tm-6da2d477.vercel.app/" target="_blank" class="btn btn-primary">Browse Store <i class="fa-solid fa-bag-shopping"></i></a>
                     </div>
-                    <!-- الأيقونات الاجتماعية الفخمة المضافة حديثاً -->
+                    <!-- Social icons -->
                     <div class="social-links">
-                        <a href="https://wa.me/201200757959" target="_blank" class="social-icon whatsapp" title="تواصل معايا على واتساب">
+                        <a href="https://wa.me/201200757959" target="_blank" class="social-icon whatsapp" title="Message me on WhatsApp">
                             <i class="fa-brands fa-whatsapp"></i>
                         </a>
-                        <a href="https://www.youtube.com/@Mohamed-office12" target="_blank" class="social-icon youtube" title="قناتي على يوتيوب">
+                        <a href="https://www.youtube.com/@Mohamed-office12" target="_blank" class="social-icon youtube" title="My YouTube channel">
                             <i class="fa-brands fa-youtube"></i>
                         </a>
-                        <a href="https://www.instagram.com/mohamed_ahmed7_6?igsh=aWlkZjdmMHk1Zzhp" target="_blank" class="social-icon instagram" title="حسابي على إنستغرام">
+                        <a href="https://www.instagram.com/mohamed_ahmed7_6?igsh=aWlkZjdmMHk1Zzhp" target="_blank" class="social-icon instagram" title="My Instagram">
                             <i class="fa-brands fa-instagram"></i>
                         </a>
-                        <a href="https://github.com" target="_blank" class="social-icon github" title="حسابي على جيت هاب">
+                        <a href="https://github.com/mohamedahmed878" target="_blank" class="social-icon github" title="My GitHub">
                             <i class="fa-brands fa-github"></i>
                         </a>
                     </div>
                 </div>
             </div>
             
-            <!-- حاوية الصورة الشخصية المتطابقة تماماً مع الإطار -->
+            <!-- Profile photo -->
             <div class="hero-image-container">
-                <!-- صورتك الشخصية بتموضع هندسي وسلس بالمنتصف -->
                 <img src="٢٠٢٦٠٦١٤_٢٢٣٢٤٦.jpg" alt="Mohamed Ahmed" class="personal-photo-nested">
             </div>
         </div>
     </section>
 
-    <!-- قسم المهارات (About) ببطاقات جديدة وعصرية -->
+    <!-- Skills / About section -->
     <section id="about">
-        <h2 class="section-title">خلفيتي <span>الاحترافية</span></h2>
+        <h2 class="section-title">My Professional <span>Background</span></h2>
         <div class="skills-grid">
-            <div class="skill-card">
+            <a href="https://soalect-store-git-main-tm-6da2d477.vercel.app/" target="_blank" class="skill-card skill-card-link">
                 <div class="skill-icon"><i class="fa-solid fa-list-check"></i></div>
-                <h3>إدارة المشاريع</h3>
-                <p>توجيه فرق العمل، جدولة المهام، ومتابعة الأهداف لضمان تسليم المشاريع بكفاءة وفي الوقت المحدد.</p>
-            </div>
-            <a href="#projects" class="skill-card skill-card-link">
+                <h3>Project Management</h3>
+                <p>Leading teams, scheduling tasks, and tracking goals to deliver projects efficiently and on time.</p>
+            </a>
+            <a href="#tech-stack" class="skill-card skill-card-link">
                 <div class="skill-icon"><i class="fa-solid fa-code"></i></div>
-                <h3>البرمجة (Full-Stack)</h3>
-                <p>بناء أنظمة كاملة من React وNode.js وMongoDB، من الواجهة لقاعدة البيانات، زي متجر soalect اللي بيتطور دلوقتي.</p>
+                <h3>Programming (Full-Stack)</h3>
+                <p>Building complete systems with React, Node.js, and MongoDB — from the interface to the database, like the SOALECT store I'm developing now.</p>
+            </a>
+            <a href="https://www.youtube.com/@Mohamed-office12" target="_blank" class="skill-card skill-card-link">
+                <div class="skill-icon"><i class="fa-solid fa-clapperboard"></i></div>
+                <h3>Video Editing & Content</h3>
+                <p>Editing videos and creating content (YouTube & social media) that tells a clear story, from concept to final cut.</p>
             </a>
             <div class="skill-card">
-                <div class="skill-icon"><i class="fa-solid fa-clapperboard"></i></div>
-                <h3>مونتاج ومحتوى</h3>
-                <p>تعديل فيديوهات وصناعة محتوى (يوتيوب وسوشيال ميديا) بيحكي قصة واضحة، من الفكرة للمونتاج النهائي.</p>
-            </div>
-            <div class="skill-card">
                 <div class="skill-icon"><i class="fa-solid fa-bullhorn"></i></div>
-                <h3>التسويق والمبيعات</h3>
-                <p>استراتيجيات استباقية ومدروسة لرفع قيم المبيعات وتوسيع قاعدة زوار متجر الملابس بشكل قياسي.</p>
+                <h3>Marketing & Sales</h3>
+                <p>Proactive, well-planned strategies to boost sales and grow the clothing store's audience significantly.</p>
             </div>
         </div>
     </section>
 
-    <!-- قسم المشاريع البرمجية -->
+    <!-- Tech Stack section -->
+    <section id="tech-stack">
+        <h2 class="section-title">Tech <span>Stack</span></h2>
+
+        <div class="stack-category">
+            <div class="stack-category-title">Frontend</div>
+            <div class="stack-grid">
+                <div class="stack-item"><i class="fa-brands fa-react"></i><span>React</span></div>
+                <div class="stack-item"><i class="fa-brands fa-js"></i><span>JavaScript</span></div>
+                <div class="stack-item"><i class="fa-brands fa-html5"></i><span>HTML5</span></div>
+                <div class="stack-item"><i class="fa-solid fa-wind"></i><span>Tailwind CSS</span></div>
+            </div>
+        </div>
+
+        <div class="stack-category">
+            <div class="stack-category-title">Backend & Data</div>
+            <div class="stack-grid">
+                <div class="stack-item"><i class="fa-brands fa-python"></i><span>Python</span></div>
+                <div class="stack-item"><i class="fa-solid fa-database"></i><span>SQL</span></div>
+                <div class="stack-item"><i class="fa-solid fa-leaf"></i><span>MongoDB</span></div>
+            </div>
+        </div>
+
+        <div class="stack-category">
+            <div class="stack-category-title">Tools & Platforms</div>
+            <div class="stack-grid">
+                <div class="stack-item"><i class="fa-brands fa-github"></i><span>GitHub</span></div>
+                <div class="stack-item"><i class="fa-brands fa-git-alt"></i><span>Git</span></div>
+                <div class="stack-item"><i class="fa-brands fa-linux"></i><span>Linux</span></div>
+            </div>
+        </div>
+
+        <div class="stack-category">
+            <div class="stack-category-title">Other</div>
+            <div class="stack-grid">
+                <div class="stack-item"><i class="fa-solid fa-microchip"></i><span>IoT</span></div>
+            </div>
+        </div>
+
+        <div class="stack-more">
+            <a href="#projects" class="btn btn-secondary"><i class="fa-solid fa-folder-open"></i> See My Projects</a>
+        </div>
+    </section>
+
+    <!-- Programming projects section -->
     <section id="projects">
-        <h2 class="section-title">مشاريع <span>برمجية</span></h2>
+        <h2 class="section-title">Programming <span>Projects</span></h2>
         <div class="projects-grid">
             <div class="project-card">
                 <div class="project-icon"><i class="fa-solid fa-bag-shopping"></i></div>
                 <h3>SOALECT</h3>
-                <p>متجر إلكتروني لبراند ملابس ستريت وير، متطور بـ React وNode.js وMongoDB مع لوحة تحكم أدمن كاملة.</p>
+                <p>An e-commerce store for a streetwear clothing brand, built with React, Node.js, and MongoDB, with a full admin dashboard.</p>
                 <div class="project-links">
-                    <a href="https://github.com/mohamedahmed878" target="_blank" class="project-link-btn github"><i class="fa-brands fa-github"></i> الكود</a>
-                    <a href="https://soalect-store-git-main-tm-6da2d477.vercel.app/" target="_blank" class="project-link-btn live"><i class="fa-solid fa-up-right-from-square"></i> شوف لايف</a>
+                    <a href="https://github.com/mohamedahmed878" target="_blank" class="project-link-btn github"><i class="fa-brands fa-github"></i> Code</a>
+                    <a href="https://soalect-store-git-main-tm-6da2d477.vercel.app/" target="_blank" class="project-link-btn live"><i class="fa-solid fa-up-right-from-square"></i> Live Demo</a>
                 </div>
             </div>
             <div class="project-card">
                 <div class="project-icon"><i class="fa-solid fa-mug-hot"></i></div>
                 <h3>Cafe</h3>
-                <p>موقع كافيه (Coffee Break) بقائمة مشروبات تفاعلية، مبني بـ JavaScript.</p>
+                <p>A cafe website (Coffee Break) with an interactive drinks menu, built with JavaScript.</p>
                 <div class="project-links">
-                    <a href="https://github.com/mohamedahmed878/cafe" target="_blank" class="project-link-btn github"><i class="fa-brands fa-github"></i> الكود</a>
-                    <a href="https://cafe-wheat-one.vercel.app/" target="_blank" class="project-link-btn live"><i class="fa-solid fa-up-right-from-square"></i> شوف لايف</a>
+                    <a href="https://github.com/mohamedahmed878/cafe" target="_blank" class="project-link-btn github"><i class="fa-brands fa-github"></i> Code</a>
+                    <a href="https://cafe-wheat-one.vercel.app/" target="_blank" class="project-link-btn live"><i class="fa-solid fa-up-right-from-square"></i> Live Demo</a>
                 </div>
             </div>
             <div class="project-card">
                 <div class="project-icon"><i class="fa-solid fa-id-card"></i></div>
                 <h3>Profile</h3>
-                <p>الصفحة الشخصية دي بالذات، مبنية من الصفر بـ HTML وCSS.</p>
+                <p>This very personal website, built from scratch with HTML and CSS.</p>
                 <div class="project-links">
-                    <a href="https://github.com/mohamedahmed878" target="_blank" class="project-link-btn github"><i class="fa-brands fa-github"></i> الكود</a>
+                    <a href="https://github.com/mohamedahmed878" target="_blank" class="project-link-btn github"><i class="fa-brands fa-github"></i> Code</a>
                 </div>
             </div>
         </div>
         <div class="projects-more">
-            <a href="https://github.com/mohamedahmed878" target="_blank" class="btn btn-secondary"><i class="fa-brands fa-github"></i> شوف كل المشاريع على GitHub</a>
+            <a href="https://github.com/mohamedahmed878" target="_blank" class="btn btn-secondary"><i class="fa-brands fa-github"></i> See All Projects on GitHub</a>
         </div>
     </section>
 
-    <!-- قسم التواصل قبل التذييل -->
+    <!-- Contact section -->
     <section id="contact" class="contact-section">
         <div class="contact-box">
             <img src="٢٠٢٦٠٦١٤_٢٢٣٢٤٦.jpg" alt="Mohamed Ahmed" class="contact-photo">
-            <h2 class="section-title" style="margin-bottom: 15px;">تواصل <span>معايا</span></h2>
-            <p class="contact-text">لو عندك استفسار أو فكرة مشروع، تقدر تكلمني على طول على واتساب.</p>
+            <h2 class="section-title" style="margin-bottom: 15px;">Get In <span>Touch</span></h2>
+            <p class="contact-text">Got a question or a project idea? Reach out to me directly on WhatsApp.</p>
             <a href="https://wa.me/201200757959" target="_blank" class="btn btn-primary contact-whatsapp-btn">
-                <i class="fa-brands fa-whatsapp"></i> تواصل معي على واتساب
+                <i class="fa-brands fa-whatsapp"></i> Message me on WhatsApp
             </a>
         </div>
     </section>
 
-    <!-- التذييل -->
+    <!-- Footer -->
     <footer>
-        <p>جميع الحقوق محفوظة لـ soalect © 2026 | تطوير وإدارة Mohamed Ahmed</p>
+        <p>All rights reserved to SOALECT © 2026 | Built & managed by Mohamed Ahmed</p>
     </footer>
 
 </body>
