@@ -4,6 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mohamed Ahmed - Portfolio & soalect</title>
+    <!-- إعدادات إضافة الصفحة للشاشة الرئيسية كتطبيق -->
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" href="icon-192.png" type="image/png">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Profile">
+    <meta name="theme-color" content="#05070f">
     <!-- استيراد خط Tajawal الفخم من Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;900&display=swap" rel="stylesheet">
     <!-- مكتبة أيقونات FontAwesome -->
@@ -458,6 +466,13 @@
             font-weight: 700;
         }
 
+        .skill-card-link {
+            display: block;
+            text-decoration: none;
+            color: inherit;
+            cursor: pointer;
+        }
+
         .skill-card p {
             color: var(--text-muted);
             font-size: 0.95rem;
@@ -883,8 +898,6 @@
                     <li><a href="#home">الرئيسية</a></li>
                     <li><a href="#about">المهارات</a></li>
                     <li><a href="https://soalect-store-git-main-tm-6da2d477.vercel.app/" target="_blank">متجري</a></li>
-                    <li><a href="#projects">مشاريع برمجية</a></li>
-                    <li><a href="#contact">تواصل معي</a></li>
                 </ul>
             </nav>
         </div>
@@ -939,11 +952,11 @@
                 <h3>إدارة المشاريع</h3>
                 <p>توجيه فرق العمل، جدولة المهام، ومتابعة الأهداف لضمان تسليم المشاريع بكفاءة وفي الوقت المحدد.</p>
             </div>
-            <div class="skill-card">
+            <a href="#projects" class="skill-card skill-card-link">
                 <div class="skill-icon"><i class="fa-solid fa-code"></i></div>
                 <h3>البرمجة (Full-Stack)</h3>
                 <p>بناء أنظمة كاملة من React وNode.js وMongoDB، من الواجهة لقاعدة البيانات، زي متجر soalect اللي بيتطور دلوقتي.</p>
-            </div>
+            </a>
             <div class="skill-card">
                 <div class="skill-icon"><i class="fa-solid fa-clapperboard"></i></div>
                 <h3>مونتاج ومحتوى</h3>
@@ -977,14 +990,6 @@
                 <div class="project-links">
                     <a href="https://github.com/mohamedahmed878/cafe" target="_blank" class="project-link-btn github"><i class="fa-brands fa-github"></i> الكود</a>
                     <a href="https://cafe-wheat-one.vercel.app/" target="_blank" class="project-link-btn live"><i class="fa-solid fa-up-right-from-square"></i> شوف لايف</a>
-                </div>
-            </div>
-            <div class="project-card">
-                <div class="project-icon"><i class="fa-solid fa-lock"></i></div>
-                <h3>Auth System</h3>
-                <p>نظام تسجيل دخول وتسجيل حساب (Authentication) بيؤمّن دخول المستخدمين للمشاريع.</p>
-                <div class="project-links">
-                    <a href="https://github.com/mohamedahmed878" target="_blank" class="project-link-btn github"><i class="fa-brands fa-github"></i> الكود</a>
                 </div>
             </div>
             <div class="project-card">
