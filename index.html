@@ -317,6 +317,14 @@
         }
 
         /* تأثيرات الألوان والتحليق الفريدة لكل منصة */
+        .social-icon.whatsapp:hover {
+            background: #25d366;
+            color: #fff;
+            border-color: #25d366;
+            box-shadow: 0 0 20px rgba(37, 211, 102, 0.5);
+            transform: translateY(-5px) rotate(-8deg);
+        }
+
         .social-icon.youtube:hover {
             background: #ff0000;
             color: #fff;
@@ -563,6 +571,140 @@
             box-shadow: 0 0 15px rgba(6, 182, 212, 0.4);
         }
 
+        /* --- 6.4. قسم المشاريع البرمجية --- */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .project-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 35px 30px;
+            backdrop-filter: blur(10px);
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(6, 182, 212, 0.4);
+            box-shadow: 0 20px 40px rgba(6, 182, 212, 0.1);
+        }
+
+        .project-icon {
+            width: 55px;
+            height: 55px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+        }
+
+        .project-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .project-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.7;
+            margin-bottom: 25px;
+            flex-grow: 1;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .project-link-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 18px;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            text-decoration: none;
+            border: 1px solid var(--border-color);
+            color: var(--text-color);
+            transition: all 0.3s ease;
+        }
+
+        .project-link-btn.github:hover {
+            background: #24292e;
+            border-color: #24292e;
+            color: #fff;
+        }
+
+        .project-link-btn.live {
+            background: var(--secondary-color);
+            border-color: var(--secondary-color);
+            color: #000;
+        }
+
+        .project-link-btn.live:hover {
+            box-shadow: 0 0 15px rgba(6, 182, 212, 0.5);
+        }
+
+        .projects-more {
+            text-align: center;
+            margin-top: 45px;
+        }
+
+        /* --- 6.5. قسم التواصل --- */
+        .contact-section {
+            min-height: auto;
+            padding-top: 60px;
+            padding-bottom: 60px;
+        }
+
+        .contact-box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 24px;
+            padding: 60px 30px;
+            backdrop-filter: blur(10px);
+        }
+
+        .contact-photo {
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--secondary-color);
+            box-shadow: 0 0 25px rgba(6, 182, 212, 0.35);
+            margin-bottom: 25px;
+        }
+
+        .contact-text {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            max-width: 500px;
+            margin-bottom: 30px;
+        }
+
+        .contact-whatsapp-btn {
+            background: linear-gradient(45deg, #25d366, #06b6d4);
+            box-shadow: 0 4px 25px rgba(37, 211, 102, 0.35);
+        }
+
         /* --- 7. التذييل --- */
         footer {
             text-align: center;
@@ -697,6 +839,29 @@
                 margin-top: 60px;
                 font-size: 0.85rem;
             }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+                gap: 18px;
+            }
+
+            .project-card {
+                padding: 28px 22px;
+            }
+
+            .contact-box {
+                padding: 40px 20px;
+            }
+
+            .contact-photo {
+                width: 90px;
+                height: 90px;
+            }
+
+            .contact-whatsapp-btn {
+                width: 100%;
+                justify-content: center;
+            }
         }
     </style>
 </head>
@@ -718,6 +883,8 @@
                     <li><a href="#home">الرئيسية</a></li>
                     <li><a href="#about">المهارات</a></li>
                     <li><a href="https://soalect-store-git-main-tm-6da2d477.vercel.app/" target="_blank">متجري</a></li>
+                    <li><a href="#projects">مشاريع برمجية</a></li>
+                    <li><a href="#contact">تواصل معي</a></li>
                 </ul>
             </nav>
         </div>
@@ -739,6 +906,9 @@
                     </div>
                     <!-- الأيقونات الاجتماعية الفخمة المضافة حديثاً -->
                     <div class="social-links">
+                        <a href="https://wa.me/201200757959" target="_blank" class="social-icon whatsapp" title="تواصل معايا على واتساب">
+                            <i class="fa-brands fa-whatsapp"></i>
+                        </a>
                         <a href="https://www.youtube.com/@Mohamed-office12" target="_blank" class="social-icon youtube" title="قناتي على يوتيوب">
                             <i class="fa-brands fa-youtube"></i>
                         </a>
@@ -784,6 +954,62 @@
                 <h3>التسويق والمبيعات</h3>
                 <p>استراتيجيات استباقية ومدروسة لرفع قيم المبيعات وتوسيع قاعدة زوار متجر الملابس بشكل قياسي.</p>
             </div>
+        </div>
+    </section>
+
+    <!-- قسم المشاريع البرمجية -->
+    <section id="projects">
+        <h2 class="section-title">مشاريع <span>برمجية</span></h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <div class="project-icon"><i class="fa-solid fa-bag-shopping"></i></div>
+                <h3>SOALECT</h3>
+                <p>متجر إلكتروني لبراند ملابس ستريت وير، متطور بـ React وNode.js وMongoDB مع لوحة تحكم أدمن كاملة.</p>
+                <div class="project-links">
+                    <a href="https://github.com/mohamedahmed878" target="_blank" class="project-link-btn github"><i class="fa-brands fa-github"></i> الكود</a>
+                    <a href="https://soalect-store-git-main-tm-6da2d477.vercel.app/" target="_blank" class="project-link-btn live"><i class="fa-solid fa-up-right-from-square"></i> شوف لايف</a>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-icon"><i class="fa-solid fa-mug-hot"></i></div>
+                <h3>Cafe</h3>
+                <p>موقع كافيه (Coffee Break) بقائمة مشروبات تفاعلية، مبني بـ JavaScript.</p>
+                <div class="project-links">
+                    <a href="https://github.com/mohamedahmed878/cafe" target="_blank" class="project-link-btn github"><i class="fa-brands fa-github"></i> الكود</a>
+                    <a href="https://cafe-wheat-one.vercel.app/" target="_blank" class="project-link-btn live"><i class="fa-solid fa-up-right-from-square"></i> شوف لايف</a>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-icon"><i class="fa-solid fa-lock"></i></div>
+                <h3>Auth System</h3>
+                <p>نظام تسجيل دخول وتسجيل حساب (Authentication) بيؤمّن دخول المستخدمين للمشاريع.</p>
+                <div class="project-links">
+                    <a href="https://github.com/mohamedahmed878" target="_blank" class="project-link-btn github"><i class="fa-brands fa-github"></i> الكود</a>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-icon"><i class="fa-solid fa-id-card"></i></div>
+                <h3>Profile</h3>
+                <p>الصفحة الشخصية دي بالذات، مبنية من الصفر بـ HTML وCSS.</p>
+                <div class="project-links">
+                    <a href="https://github.com/mohamedahmed878" target="_blank" class="project-link-btn github"><i class="fa-brands fa-github"></i> الكود</a>
+                </div>
+            </div>
+        </div>
+        <div class="projects-more">
+            <a href="https://github.com/mohamedahmed878" target="_blank" class="btn btn-secondary"><i class="fa-brands fa-github"></i> شوف كل المشاريع على GitHub</a>
+        </div>
+    </section>
+
+    <!-- قسم التواصل قبل التذييل -->
+    <section id="contact" class="contact-section">
+        <div class="contact-box">
+            <img src="٢٠٢٦٠٦١٤_٢٢٣٢٤٦.jpg" alt="Mohamed Ahmed" class="contact-photo">
+            <h2 class="section-title" style="margin-bottom: 15px;">تواصل <span>معايا</span></h2>
+            <p class="contact-text">لو عندك استفسار أو فكرة مشروع، تقدر تكلمني على طول على واتساب.</p>
+            <a href="https://wa.me/201200757959" target="_blank" class="btn btn-primary contact-whatsapp-btn">
+                <i class="fa-brands fa-whatsapp"></i> تواصل معي على واتساب
+            </a>
         </div>
     </section>
 
